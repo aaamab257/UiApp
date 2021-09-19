@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">UiApp</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forget_pass">Forget your password !</string>
+    <string name="register">Register</string>
+    <string name="haveAcc">Already have an account ?</string>
+    <string name="name">Your name</string>
+    <string name="coPass">Confirm Password</string>
+</resources>

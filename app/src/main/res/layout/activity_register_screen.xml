@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.register.RegisterScreen">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top_shape"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/imgTop"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bottom_shape"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/register"
+        android:textStyle="bold"
+        android:textColor="@color/text_Color"
+        android:layout_toEndOf="@+id/imgTop"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="58sp"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/edName"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@+id/imgTop"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:inputType="text"
+        android:hint="@string/name"
+        android:textColorHint="@color/text_Color"
+        android:background="@drawable/ed_style"
+        />
+
+    <EditText
+        android:id="@+id/edEmail"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@+id/edName"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email"
+        android:textColorHint="@color/text_Color"
+        android:background="@drawable/ed_style"
+        />
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@+id/edEmail"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/ed_style"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        android:textColorHint="@color/text_Color"
+        />
+    <EditText
+        android:id="@+id/edConPassword"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@+id/edPassword"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/ed_style"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:inputType="textPassword"
+        android:hint="@string/coPass"
+        android:textColorHint="@color/text_Color"
+        />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@id/edConPassword"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/register"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:background="@drawable/btn_style"
+        android:textColor="@color/text_Color"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/haveAcc"
+        android:layout_below="@id/btnRegister"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/text_Color"
+        android:textSize="17sp"
+        android:layout_marginTop="30dp"
+        />
+
+</RelativeLayout>
