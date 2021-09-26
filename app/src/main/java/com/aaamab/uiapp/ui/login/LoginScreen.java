@@ -20,17 +20,20 @@ public class LoginScreen extends AppCompatActivity implements LoginListener {
 
     String email , password ;
 
+    LoginPresenter loginPresenter ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this , R.layout.activity_login_screen);
         handler = new MyHandler(this);
         binding.setHandler(handler);
+        loginPresenter = new LoginPresenter(this ,this);
     }
 
     @Override
     public void onGetData() {
-
+        Toast.makeText(LoginScreen.this, "Please Enter your Email", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -48,14 +51,7 @@ public class LoginScreen extends AppCompatActivity implements LoginListener {
         public void login(View v){
             email = binding.edEmail.getText().toString();
             password = binding.edPassword.getText().toString();
-
-            if (email.isEmpty()){
-                Toast.makeText(context, "Please Enter your Email", Toast.LENGTH_SHORT).show();
-            }else if (password.isEmpty()){
-                Toast.makeText(context, "Please Enter your password", Toast.LENGTH_SHORT).show();
-            }else {
-                Toast.makeText(context, "Login Successfully", Toast.LENGTH_SHORT).show();
-            }
+            loginPresenter.login(email , password);
         }
         public void forgetPassword(View v){
             Intent goToForgetScreen = new Intent(LoginScreen.this, ForgetPasswordScreen.class);
