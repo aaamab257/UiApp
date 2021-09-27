@@ -21,6 +21,7 @@ public class ProfileScreen extends AppCompatActivity {
         // https://i.pinimg.com/236x/08/1f/62/081f62c884544bb13373ce6122745c61.jpg
         initialViews();
         Picasso.get().load("https://i.pinimg.com/236x/08/1f/62/081f62c884544bb13373ce6122745c61.jpg").into(img);
+
     }
 
     private void initialViews() {
