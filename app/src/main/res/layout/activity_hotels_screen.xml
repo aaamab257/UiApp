@@ -32,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:visibility="gone"
             android:layout_centerInParent="true">
 
             <LinearLayout
@@ -82,6 +83,12 @@
             </LinearLayout>
 
         </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/progress_circular"
+            android:id="@+id/recSugg"
+            />
 
         <Button
             android:layout_width="match_parent"
@@ -101,6 +108,7 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/progress_circular"
             android:visibility="gone"
+            android:layout_marginBottom="15dp"
             />
 
     </RelativeLayout>

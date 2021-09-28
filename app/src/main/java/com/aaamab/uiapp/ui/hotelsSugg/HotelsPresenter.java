@@ -32,8 +32,10 @@ public class HotelsPresenter {
             @Override
             public void onResponse(Call<LocationSearch> call, Response<LocationSearch> response) {
                 if (response.isSuccessful()){
-                    hotels.onSuccessfully(response.body().getTrackingID() ,response.body().getMoreSuggestions());
+                    hotels.onSuccessfully(response.body().getSuggestions());
                 }
+
+                //response.body() = LocationSearch
             }
 
             @Override

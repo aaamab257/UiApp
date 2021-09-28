@@ -5,6 +5,7 @@ import androidx.databinding.DataBindingUtil;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -13,6 +14,9 @@ import com.aaamab.uiapp.R;
 import com.aaamab.uiapp.data.RegisterData;
 import com.aaamab.uiapp.databinding.ActivityRegisterScreenBinding;
 import com.aaamab.uiapp.ui.login.LoginScreen;
+import com.aaamab.uiapp.utils.StaticsMethod;
+
+import static com.aaamab.uiapp.utils.StaticsMethod.MYPREF;
 
 public class RegisterScreen extends AppCompatActivity implements RegisterLis {
 
@@ -20,11 +24,13 @@ public class RegisterScreen extends AppCompatActivity implements RegisterLis {
 
     MyHandler handler;
 
-    String name , email , password , confirmPassword ;
+    String name, email, password, confirmPassword;
 
-    RegisterPresenter presenter ;
+    RegisterPresenter presenter;
 
-    RegisterData userData ;
+    RegisterData userData;
+
+    SharedPreferences sharedpreferences;
 
 
     @Override
@@ -33,7 +39,9 @@ public class RegisterScreen extends AppCompatActivity implements RegisterLis {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register_screen);
         handler = new MyHandler(this);
         binding.setHandler(handler);
-        presenter = new RegisterPresenter(this ,this);
+        presenter = new RegisterPresenter(this, this);
+
+        sharedpreferences = getSharedPreferences(MYPREF, Context.MODE_PRIVATE);
 
     }
 
@@ -53,10 +61,17 @@ public class RegisterScreen extends AppCompatActivity implements RegisterLis {
     }
 
     @Override
-    public void onSuccessfully(String email, String name ,String password) {
-        userData = new RegisterData( name , email , password );
-        userData.setName("Mohamed");
-        Toast.makeText(this, "Your name : "+userData.getName() +"\nYour Email : "+userData.getEmail(), Toast.LENGTH_SHORT).show();
+    public void onSuccessfully(String email, String name, String password) {
+        userData = new RegisterData(name, email, password);
+        //userData.setName("Mohamed");
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString(StaticsMethod.email , userData.getEmail());
+        editor.putString(StaticsMethod.name , userData.getName());
+
+        editor.commit();
+
+
+        Toast.makeText(this, "Your name : " + userData.getName() + "\nYour Email : " + userData.getEmail(), Toast.LENGTH_SHORT).show();
     }
 
     public class MyHandler {
@@ -67,14 +82,16 @@ public class RegisterScreen extends AppCompatActivity implements RegisterLis {
         }
 
         public void register(View view) {
-            name = binding.edName.getText().toString() ;
+            name = binding.edName.getText().toString();
             email = binding.edEmail.getText().toString();
             password = binding.edPassword.getText().toString();
             confirmPassword = binding.edConPassword.getText().toString();
-            presenter.onRegister(name , email , password , confirmPassword);
+
+
+            presenter.onRegister(name, email, password, confirmPassword);
         }
 
-        public void goToLogin(View v){
+        public void goToLogin(View v) {
             presenter.goToLogin();
         }
 

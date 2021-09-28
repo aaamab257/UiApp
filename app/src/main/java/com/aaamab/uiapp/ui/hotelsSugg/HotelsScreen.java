@@ -2,6 +2,7 @@ package com.aaamab.uiapp.ui.hotelsSugg;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,7 +11,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.aaamab.uiapp.R;
+import com.aaamab.uiapp.adapters.SuggAdapter;
+import com.aaamab.uiapp.data.SuggestionsObj;
 import com.aaamab.uiapp.databinding.ActivityHotelsScreenBinding;
+
+import java.util.ArrayList;
 
 public class HotelsScreen extends AppCompatActivity implements HotelsInterface {
 
@@ -19,6 +24,7 @@ public class HotelsScreen extends AppCompatActivity implements HotelsInterface {
     MyHandler handler ;
     String city ;
     HotelsPresenter presenter ;
+    SuggAdapter adapter ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +37,11 @@ public class HotelsScreen extends AppCompatActivity implements HotelsInterface {
 
 
     @Override
-    public void onSuccessfully(String id, int more) {
+    public void onSuccessfully(ArrayList<SuggestionsObj> data) {
         binding.progressCircular.setVisibility(View.GONE);
-        binding.trackingID.setText(id);
-        binding.moreSugg.setText(more+"");
+        adapter = new SuggAdapter(data , this );
+        binding.recSugg.setLayoutManager(new LinearLayoutManager(this));
+        binding.recSugg.setAdapter(adapter);
     }
 
     @Override
