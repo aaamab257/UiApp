@@ -15,6 +15,7 @@ import com.aaamab.uiapp.data.RegisterData;
 import com.aaamab.uiapp.databinding.ActivityRegisterScreenBinding;
 import com.aaamab.uiapp.ui.login.LoginScreen;
 import com.aaamab.uiapp.utils.StaticsMethod;
+import com.google.firebase.auth.FirebaseAuth;
 
 import static com.aaamab.uiapp.utils.StaticsMethod.MYPREF;
 
@@ -33,6 +34,8 @@ public class RegisterScreen extends AppCompatActivity implements RegisterLis {
     SharedPreferences sharedpreferences;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +43,8 @@ public class RegisterScreen extends AppCompatActivity implements RegisterLis {
         handler = new MyHandler(this);
         binding.setHandler(handler);
         presenter = new RegisterPresenter(this, this);
-
         sharedpreferences = getSharedPreferences(MYPREF, Context.MODE_PRIVATE);
+
 
     }
 

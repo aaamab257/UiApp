@@ -25,15 +25,17 @@
         <activity android:name=".ui.profile.ProfileScreen" />
         <activity android:name=".ui.main.HomeScreen" />
         <activity android:name=".ui.register.RegisterScreen">
-
-        </activity>
-        <activity android:name=".ui.login.LoginScreen" />
-        <activity android:name=".ui.Splash.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.login.LoginScreen">
+
+        </activity>
+        <activity android:name=".ui.Splash.SplashScreen">
+
         </activity>
     </application>
 
