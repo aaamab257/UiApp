@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="handler"
+            type="com.aaamab.uiapp.ui.test.TextScreen.MyHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.test.TextScreen">
+
+
+        <TextView
+            android:id="@+id/txtMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Read Message"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1.5"
+                android:background="@drawable/ed_style"
+                android:inputType="text"
+                android:id="@+id/edMessage" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="0.5"
+                android:layout_marginEnd="8dp"
+                android:text="Send"
+                android:onClick="@{handler.onSend}"
+                android:textAllCaps="false"
+                android:id="@+id/btnSend" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
