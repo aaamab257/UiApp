@@ -24,17 +24,19 @@
         <activity android:name=".ui.hotelsSugg.HotelsScreen" />
         <activity android:name=".ui.forgetPassword.ForgetPasswordScreen" />
         <activity android:name=".ui.main2.MainScreen2">
+
+        </activity>
+        <activity
+            android:name=".ui.drawar.DrawarScreen"
+            android:label="@string/title_activity_drawar_screen"
+            android:theme="@style/Theme.UiApp.NoActionBar" />
+        <activity android:name=".ui.users.UsersScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.drawar.DrawarScreen"
-            android:label="@string/title_activity_drawar_screen"
-            android:theme="@style/Theme.UiApp.NoActionBar" />
-        <activity android:name=".ui.Users.UsersScreen" />
         <activity android:name=".ui.profile.ProfileScreen" />
         <activity android:name=".ui.main.HomeScreen">
 

@@ -1,18 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".ui.Users.UsersScreen">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="handler"
+            type="com.aaamab.uiapp.ui.users.UsersScreen.MyHandler" />
+    </data>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/recUsers"
-        />
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.users.UsersScreen">
 
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="15dp"
+            android:id="@+id/linContainer">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="First name"
+                android:id="@+id/edFirstName" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Last name"
+                android:id="@+id/edLastName" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Add"
+                android:onClick="@{handler.add}"
+                android:id="@+id/btnAdd" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linContainer"
+            android:id="@+id/recUsers" />
+
+
+    </RelativeLayout>
+</layout>
