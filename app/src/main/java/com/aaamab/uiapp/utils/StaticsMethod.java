@@ -1,5 +1,7 @@
 package com.aaamab.uiapp.utils;
 
+import android.content.Intent;
+
 import com.aaamab.uiapp.data.EntitiesObj;
 
 import java.util.ArrayList;
@@ -15,13 +17,17 @@ public class StaticsMethod {
 
     public static ArrayList<EntitiesObj> entities = null ;
 
+    public static int PICK_IMAGE_REQUEST = 10;
 
+    public static int PICK_IMAGE_PERMISSION_REQUEST = 101;
 
     public static String email = "email";
     public static String name = "name" ;
     public static String isLoged = "isLoged" ;
 
     public static String MYPREF = "UIAPP" ;
+
+
 
 
 }
