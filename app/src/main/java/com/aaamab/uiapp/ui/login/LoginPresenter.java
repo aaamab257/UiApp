@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.aaamab.uiapp.utils.StaticsMethod;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -39,9 +40,10 @@ public class LoginPresenter {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+                            StaticsMethod.UID = task.getResult().getUser().getUid();
 
                             Toast.makeText(context, "Login successfully", Toast.LENGTH_SHORT).show();
-
+                            login.onLogin();
 
                         }else {
                             Toast.makeText(context, "Login Failed", Toast.LENGTH_SHORT).show();

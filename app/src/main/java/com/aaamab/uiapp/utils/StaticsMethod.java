@@ -27,6 +27,8 @@ public class StaticsMethod {
 
     public static String MYPREF = "UIAPP" ;
 
+    public static String UID = "";
+
 
 
 

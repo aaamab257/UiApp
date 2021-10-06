@@ -14,6 +14,7 @@ import com.aaamab.uiapp.R;
 import com.aaamab.uiapp.databinding.ActivityLoginScreenBinding;
 import com.aaamab.uiapp.ui.forgetPassword.ForgetPasswordScreen;
 import com.aaamab.uiapp.ui.main.HomeScreen;
+import com.aaamab.uiapp.ui.storage.StorageScreen;
 import com.aaamab.uiapp.utils.StaticsMethod;
 
 import static com.aaamab.uiapp.utils.StaticsMethod.MYPREF;
@@ -53,7 +54,7 @@ public class LoginScreen extends AppCompatActivity implements LoginListener {
         editor.putBoolean(isLoged, true);
         editor.commit();
 
-        startActivity(new Intent(LoginScreen.this , HomeScreen.class));
+        startActivity(new Intent(LoginScreen.this , StorageScreen.class));
         finish();
 
     }

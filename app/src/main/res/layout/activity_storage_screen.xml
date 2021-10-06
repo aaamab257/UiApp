@@ -46,8 +46,20 @@
                 android:text="Upload" />
         </LinearLayout>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="8dp"
+            android:text="Download"
+            android:textAllCaps="false"
+            android:id="@+id/btnDownload"
+            android:onClick="@{handler.download}"
+            />
         <!--Image View for showing image choosen from gallery-->
         <ImageView
+            android:layout_below="@id/layout_button"
+            android:layout_above="@id/btnDownload"
             android:id="@+id/imgView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

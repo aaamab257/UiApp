@@ -19,4 +19,9 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_map_screen">Map</string>
+
+    <string name="api_Key">AIzaSyB0k-2yGGew1hsUQaoyoYYQXvQkMXmZYVU</string>
+
+
 </resources>
